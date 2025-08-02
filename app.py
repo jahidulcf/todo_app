@@ -1,5 +1,7 @@
 import os
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 from models import db, Todo
 from flask.cli import load_dotenv
 
@@ -83,3 +85,4 @@ def delete_todo(todo_id):
 
 if __name__ == '__main__':
     app.run()
+    CORS(app)
