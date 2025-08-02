@@ -9,6 +9,8 @@ from flask.cli import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)  # ✅ Enable CORS right after app is created
+
 
 # Build DB URL from .env values
 user = os.getenv("user")
@@ -85,4 +87,3 @@ def delete_todo(todo_id):
 
 if __name__ == '__main__':
     app.run()
-    CORS(app)
